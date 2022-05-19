@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Exercices W2 Widgets</string>
+    <string name="hello_message">Bonjour!</string>
+    <string name="button_text">Juste un bouton</string>
+    <string name="enter_phone_number">Numéro de téléphone</string>
+</resources>
