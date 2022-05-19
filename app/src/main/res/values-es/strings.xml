@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Ejercicios W2 Widgets</string>
+    <string name="app_name">Ejercicios W2</string>
     <string name="hello_message">Hola!</string>
     <string name="button_text">soy un boton</string>
     <string name="enter_phone_number">El número de teléfono</string>
+    <string name="i_m_a_checkbox">C\'est un checkbox</string>
+    <string name="i_m_a_switch">I\'m a switch</string>
+    <string name="i_m_a_radio_button">I\'m a radio button</string>
 </resources>
