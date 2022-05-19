@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Exercises W2 Linear</string>
+    <string name="app_name">Exercises W2 Grid</string>
     <string name="hello_world">Hello World!</string>
     <string name="click_me">Click on me</string>
     <string name="text">This is a textView</string>
