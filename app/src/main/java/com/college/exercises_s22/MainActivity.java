@@ -2,51 +2,41 @@ package com.college.exercises_s22;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.TextView;
+import android.widget.CheckBox;
+import android.widget.RadioButton;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
+    //this is our starting point
+
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        super.onCreate(savedInstanceState); //calls parent onCreate()
+        setContentView( R.layout.activity_main ); //loads XML on screen
 
-        //now your xml is loaded
-        TextView topView = findViewById(R.id.helloTextView); //must match XML id
-        String oldText = topView.getText().toString();
-        topView.setText("Java put this here");
+        CheckBox cb =  findViewById(R.id.check);
 
-        EditText bottom = findViewById(R.id.bottomtext);
+        RadioButton radio = findViewById(R.id.radio);
+        SwitchCompat sw = findViewById(R.id.sw);
 
-        Button btn = findViewById(R.id.button);
-        btn.setText("The view was previously "+ oldText); //on startup
+        sw.setOnCheckedChangeListener( ( btn, onOrOff) -> {
+            radio.setChecked(onOrOff);
 
-        btn.setOnClickListener(new View.OnClickListener() { //anonymous class
-            @Override
-            public void onClick(View v) {
-                topView.setText("Edit text has " + bottom.getText());
-            }
+            Toast.makeText(MainActivity.this, "You clicked on switch", Toast.LENGTH_LONG).show();
         });
 
-        /* Alternate version for button onClick method : Lambda function
-        btn.setOnClickListener(  (  click ) ->
-        {
-            //when  you click
-            //text is empty
-            topView.setText("Edit text has " +  bottom.getText().toString());
 
-        }   ); //OnCLickListener goes in here
-        */
+        cb.setOnCheckedChangeListener( ( b, c) -> {
+            Toast.makeText(MainActivity.this, "You clicked on checkbox", Toast.LENGTH_SHORT).show();
+            if(c)
+                radio.setChecked(true);
+            else
+                radio.setChecked(false);
+        });
 
-
-        ImageButton btn_img = findViewById(R.id.btn_image);
-        //Done with Lambda function
-        btn_img.setOnClickListener( vw -> topView.setText("You clicked on Image View") );
     }
 }
