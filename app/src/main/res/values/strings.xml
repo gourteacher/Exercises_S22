@@ -1,8 +1,3 @@
 <resources>
-    <string name="app_name">State Transitions</string>
-    <string name="button_convert">Convert</string>
-    <string name="hint_amount">Enter amount</string>
-    <string name="result">Result</string>
-    <string name="error_msg">Enter amount to convert</string>
-    <string name="amount_dollars">Enter amount in dollars</string>
+    <string name="app_name">Week4 - Lifecycle</string>
 </resources>
