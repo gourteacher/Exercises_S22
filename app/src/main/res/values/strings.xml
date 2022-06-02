@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Currency Conversion</string>
+    <string name="app_name">State Transitions</string>
     <string name="button_convert">Convert</string>
     <string name="hint_amount">Enter amount</string>
     <string name="result">Result</string>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Conversion de devises</string>
+    <string name="app_name">Transitions d\'états</string>
     <string name="button_convert">Convertir</string>
     <string name="result">Resultat</string>
     <string name="error_msg">Entrer montant pour convertir</string>
