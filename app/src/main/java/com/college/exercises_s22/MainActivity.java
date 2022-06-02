@@ -1,44 +1,53 @@
 package com.college.exercises_s22;
 
 
+
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SwitchCompat;
-
+import android.graphics.Color;
 import android.os.Bundle;
-import android.widget.CheckBox;
-import android.widget.RadioButton;
-import android.widget.Toast;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
-import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final float RATE_CAD_EURO = 0.85F;
+
+
     @Override
-    //this is our starting point
-
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState); //calls parent onCreate()
-        setContentView( R.layout.activity_main ); //loads XML on screen
+        super.onCreate(savedInstanceState);
 
-        CheckBox cb =  findViewById(R.id.check);
-
-        RadioButton radio = findViewById(R.id.radio);
-        SwitchCompat sw = findViewById(R.id.sw);
-
-        sw.setOnCheckedChangeListener( ( btn, onOrOff) -> {
-            radio.setChecked(onOrOff);
-
-            Snackbar. make(sw, "You clicked on switch", Snackbar.LENGTH_LONG).show();
-        });
-
-
-        cb.setOnCheckedChangeListener( ( b, c) -> {
-            Toast.makeText(MainActivity.this, "You clicked on checkbox", Toast.LENGTH_SHORT).show();
-            if(c)
-                radio.setChecked(true);
-            else
-                radio.setChecked(false);
-        });
-
+        setContentView(R.layout.activity_main);
     }
+
+
+    public void convertAmount(View v) {
+
+        EditText edit = findViewById(R.id.amountId);
+
+        TextView tv = findViewById(R.id.resultId);
+        tv.setTextColor(Color.BLACK);
+
+        String amount_str = edit.getText().toString(); // "11.6" != 11.6
+
+        if (!amount_str.equals("")) {
+
+            float amount_cad = Float.parseFloat(amount_str);
+
+            float amount_euro = amount_cad * RATE_CAD_EURO;
+
+            String result = "" + String.format("%.2f", amount_euro) +  " euros";
+
+            tv.setText(result);
+
+        } else {
+            tv.setTextColor(Color.RED);
+            tv.setText(R.string.error_msg);
+
+        }
+    }
+
+
 }
