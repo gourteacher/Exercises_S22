@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Week 4 - deux activities</string>
-    <string name="hint_message">Ecrire message ici </string>
-    <string name="btn_gotosecond">Aller à la seconde activité </string>
-    <string name="btn_back">Revenir à la page précédente</string>
+    <string name="app_name">Semaine 4 -Activités et Intentions</string>
+    <string name="finish">Terminer</string>
+    <string name="save">Sauvegarder</string>
+    <string name="back">Retour</string>
+    <string name="sendEmail">Emvoyer un courriel</string>
+    <string name="viewURL">Aller à l\'URL</string>
+    <string name="call">Faire un appel</string>
+    <string name="main_button">Aller à la seconde activité </string>
+    <string name="enter_text">Entrer un message</string>
+    <string name="intent_examples">Aller à l\'example Intent</string>
+    <string name="start_activity_for_result">Commencer Activity For Result</string>
+    <string name="type_something">Taper ici</string>
+    <string name="preferences_activity">Activité Préférences </string>
+    <string name="preferences_reserved_name">Préférences - Nom Réservé</string>
+    <string name="data_received_from_activity">Données transmises par l\'activité</string>
+    <string name="pref_userinput">Entrés Utilisateur</string>
+    <string name="text_activity_one">Première Activité</string>
+    <string name="data_to_pass">Données à passer à la prochaine activité</string>
+    <string name="enter_some_data">Entrer un peu d\'info</string>
+    <string name="btn_start_camera">Lancer Caméra</string>
+    <string name="activity_two">Activité Deux</string>
+    <string name="default_value_str">Valeur par défaut</string>
 </resources>

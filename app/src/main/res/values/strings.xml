@@ -1,6 +1,26 @@
 <resources>
-    <string name="app_name">Week4 - Two activities</string>
-    <string name="hint_message">Enter text here</string>
-    <string name="btn_gotosecond">Go to second activity</string>
-    <string name="btn_back">Go back to previous</string>
+    <string name="app_name">Week4 - Activities and Intents</string>
+    <string name="finish">Finish</string>
+    <string name="save">Save</string>
+    <string name="back">Back</string>
+
+    <string name="sendEmail">Send an email</string>
+    <string name="viewURL">Go to a URL</string>
+    <string name="call">Make a phone call</string>
+
+    <string name="main_button">Go to Second Activity </string>
+    <string name="enter_text">Enter text</string>
+    <string name="intent_examples">Go to Intent Examples</string>
+    <string name="start_activity_for_result">Start Activity For Result</string>
+    <string name="type_something">Type something</string>
+    <string name="preferences_activity">Preferences Activity</string>
+    <string name="preferences_reserved_name">Preferences - Reserved Name</string>
+    <string name="data_received_from_activity">Data Received From Activity</string>
+    <string name="pref_userinput">UserInput</string>
+    <string name="text_activity_one">Activity One</string>
+    <string name="data_to_pass">Data To Pass To Next Activity</string>
+    <string name="enter_some_data">Enter some data</string>
+    <string name="btn_start_camera">Start Camera</string>
+    <string name="activity_two">Activity Two</string>
+    <string name="default_value_str">Default Value</string>
 </resources>
