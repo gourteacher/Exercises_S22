@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final float RATE_CAD_EURO = 0.70F;
+    private static final float RATE_CAD_EURO = 0.85F;
 
 
     @Override
