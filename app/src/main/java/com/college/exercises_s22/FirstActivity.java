@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class FirstActivity extends AppCompatActivity {
 
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "FirstActivity";
 
     private ArrayList<String> elements = new ArrayList<>(  );
     MyListAdapter myAdapter;
