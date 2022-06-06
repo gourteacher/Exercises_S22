@@ -1,6 +1,4 @@
 <resources>
-    <string name="app_name">Week4 - Two activities</string>
-    <string name="hint_message">Enter text here</string>
-    <string name="btn_gotosecond">Go to second activity</string>
-    <string name="btn_back">Go back to previous</string>
+    <string name="app_name">Exercises - ListView</string>
+    <string name="add_button">Add</string>
 </resources>

@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/inputText"
-        android:layout_width="match_parent"
-        android:layout_height="101dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:hint="@string/hint_message"
-        android:inputType="text" />
-
     <Button
-        android:id="@+id/buttonToSecond"
+        android:id="@+id/addButton"
         android:layout_width="match_parent"
-        android:layout_height="79dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:text="@string/btn_gotosecond" />
+        android:layout_height="wrap_content"
+        android:text="@string/add_button" />
+
+    <ListView
+        android:id="@+id/theListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </LinearLayout>
