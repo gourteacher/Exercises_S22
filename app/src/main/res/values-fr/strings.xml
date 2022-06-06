@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Week 4 - deux activities</string>
-    <string name="hint_message">Ecrire message ici </string>
-    <string name="btn_gotosecond">Aller à la seconde activité </string>
-    <string name="btn_back">Revenir à la page précédente</string>
+    <string name="app_name">Exercises - ListView</string>
+    <string name="add_button">Ajouter</string>
 </resources>
