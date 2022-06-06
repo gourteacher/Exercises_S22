@@ -1,5 +1,8 @@
 <resources>
-    <string name="app_name">Exercises - ListView</string>
-    <string name="add_button">Add</string>
+    <string name="app_name">Exercises - RecyclerView</string>
+    <string name="msg_text">Message goes here</string>
+    <string name="msg_time">Time goes here</string>
+    <string name="btn_submit">Send</string>
+    <string name="hint_message">Enter your message</string>
 
 </resources>

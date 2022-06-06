@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Exercises - ListView</string>
-    <string name="add_button">Ajouter</string>
+    <string name="app_name">Exercices - RecyclerView</string>
+    <string name="msg_text">Message ici</string>
+    <string name="msg_time">Temps ici</string>
+    <string name="btn_submit">Envoyer</string>
+    <string name="hint_message">Entrer votre message</string>
 </resources>
