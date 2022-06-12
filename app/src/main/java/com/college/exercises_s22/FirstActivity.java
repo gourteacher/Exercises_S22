@@ -32,7 +32,7 @@ public class FirstActivity extends AppCompatActivity {
 
         ListView myList = findViewById(R.id.theListView);
         //Line 37 is the same as lines 35 and 36:
-        //ListAdapter myAdapter = new MyListAdapter();
+        //MyListAdapter myAdapter = new MyListAdapter();
         //myList.setAdapter( myAdapter);
         myList.setAdapter( myAdapter = new MyListAdapter());
 
@@ -73,6 +73,7 @@ public class FirstActivity extends AppCompatActivity {
             TextView tView = newView.findViewById(R.id.textGoesHere);
             tView.setText( getItem(position).toString() );
 
+            //You will need to make the change in row_layout as well
             //Button b =  newView.findViewById(R.id.textGoesHere);
             //b.setText( getItem(position).toString() );
 
