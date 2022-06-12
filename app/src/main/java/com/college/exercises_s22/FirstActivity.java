@@ -32,7 +32,7 @@ public class FirstActivity extends AppCompatActivity {
 
         ListView myList = findViewById(R.id.theListView);
         //Line 37 is the same as lines 35 and 36:
-        //ListAdapter myAdapter = new MyListAdapter();
+        //MyListAdapter myAdapter = new MyListAdapter();
         //myList.setAdapter( myAdapter);
         myList.setAdapter( myAdapter = new MyListAdapter());
 
