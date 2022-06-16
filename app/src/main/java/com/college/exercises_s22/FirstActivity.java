@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -35,12 +36,15 @@ public class FirstActivity extends AppCompatActivity {
 
         myListView.setAdapter(adapter);
 
-        View.OnClickListener undo = view -> {
-            listItems.remove(listItems.size() -1);
-            adapter.notifyDataSetChanged();
-            Snackbar.make(view, "Item removed", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
-        };
+        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                listItems.remove(listItems.size() -1);
+                adapter.notifyDataSetChanged();
+                Snackbar.make(view, "Item removed", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(view -> {
