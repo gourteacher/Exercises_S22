@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Exercices W2</string>
+    <string name="app_name">Exercices W23</string>
     <string name="hello_message">Bonjour!</string>
     <string name="button_text">Juste un bouton</string>
     <string name="enter_phone_number">Numéro de téléphone</string>
     <string name="i_m_a_checkbox">C\'est un checkbox</string>
     <string name="i_m_a_switch">C\'est un switch</string>
     <string name="i_m_a_radio_button">C\'est un bouton radio</string>
+    <string name="switch_clicked">Vous avez cliqué sur switch</string>
+    <string name="checkbox_clicked">Vous avez cliqué sur checkbox</string>
 </resources>
