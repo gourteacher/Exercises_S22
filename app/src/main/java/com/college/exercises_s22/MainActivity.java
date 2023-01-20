@@ -21,23 +21,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView( R.layout.activity_main ); //loads XML on screen
 
         CheckBox cb =  findViewById(R.id.check);
-
         RadioButton radio = findViewById(R.id.radio);
         SwitchCompat sw = findViewById(R.id.sw);
 
         sw.setOnCheckedChangeListener( ( btn, onOrOff) -> {
             radio.setChecked(onOrOff);
-
-            Snackbar. make(sw, "You clicked on switch", Snackbar.LENGTH_LONG).show();
+            Snackbar. make(sw, R.string.switch_clicked, Snackbar.LENGTH_LONG).show();
         });
 
-
-        cb.setOnCheckedChangeListener( ( b, c) -> {
-            Toast.makeText(MainActivity.this, "You clicked on checkbox", Toast.LENGTH_SHORT).show();
-            if(c)
-                radio.setChecked(true);
-            else
-                radio.setChecked(false);
+        cb.setOnCheckedChangeListener( ( b, on_off) -> {
+            Toast.makeText(MainActivity.this, R.string.checkbox_clicked, Toast.LENGTH_SHORT).show();
+            radio.setChecked(on_off);
         });
 
     }

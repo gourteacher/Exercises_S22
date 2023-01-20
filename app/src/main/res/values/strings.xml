@@ -6,4 +6,6 @@
     <string name="i_m_a_checkbox">I\'m a checkbox</string>
     <string name="i_m_a_switch">I\'m a switch</string>
     <string name="i_m_a_radio_button">I\'m a radio button</string>
+    <string name="switch_clicked">You clicked on switch</string>
+    <string name="checkbox_clicked">You clicked on checkbox</string>
 </resources>
