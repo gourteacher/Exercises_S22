@@ -27,7 +27,7 @@
         android:id="@+id/bottomtext"
         android:layout_width="204dp"
         android:layout_height="77dp"
-        android:hint="@string/app_name" />
+        android:hint="@string/enter_text" />
 
     <EditText
         android:id="@+id/phone_number"

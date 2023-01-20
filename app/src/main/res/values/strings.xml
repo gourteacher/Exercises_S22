@@ -1,6 +1,10 @@
 <resources>
-    <string name="app_name">Exercises W2 Widgets</string>
+    <string name="app_name">Exercises W23 Widgets</string>
     <string name="hello_message"> Hello world   </string>
     <string name="button_text"> I\'m a button </string>
     <string name="enter_phone_number">Phone Number</string>
+    <string name="enter_text">Enter any text here </string>
+    <string name="image_clicked">You clicked on Image View</string>
+    <string name="edit_text_init">Edit text has </string>
+    <string name="java_msg"> Java put this here </string>
 </resources>

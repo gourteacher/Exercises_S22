@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Exercices W2 Widgets</string>
+    <string name="app_name">Exercices W23 Widgets</string>
     <string name="hello_message">Bonjour!</string>
     <string name="button_text">Juste un bouton</string>
     <string name="enter_phone_number">Numéro de téléphone</string>
+    <string name="enter_text">Entrez du texte </string>
+    <string name="image_clicked">Vue Image cliquée</string>
+    <string name="edit_text_init">Edit text contient </string>
+    <string name="java_msg"> Java l\'a mis ici </string>
 </resources>

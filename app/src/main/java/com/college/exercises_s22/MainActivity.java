@@ -20,33 +20,22 @@ public class MainActivity extends AppCompatActivity {
         //now your xml is loaded
         TextView topView = findViewById(R.id.helloTextView); //must match XML id
         String oldText = topView.getText().toString();
-        topView.setText("Java put this here");
+        topView.setText(R.string.java_msg);
 
         EditText bottom = findViewById(R.id.bottomtext);
 
         Button btn = findViewById(R.id.button);
-        btn.setText("The view was previously "+ oldText); //on startup
 
         btn.setOnClickListener(new View.OnClickListener() { //anonymous class
             @Override
             public void onClick(View v) {
-                topView.setText("Edit text has " + bottom.getText());
+                String newMsg = getResources().getString(R.string.edit_text_init) + " " + bottom.getText().toString();
+                topView.setText(newMsg);
             }
         });
 
-        /* Alternate version for button onClick method : Lambda function
-        btn.setOnClickListener(  (  click ) ->
-        {
-            //when  you click
-            //text is empty
-            topView.setText("Edit text has " +  bottom.getText().toString());
-
-        }   ); //OnCLickListener goes in here
-        */
-
-
         ImageButton btn_img = findViewById(R.id.btn_image);
         //Done with Lambda function
-        btn_img.setOnClickListener( vw -> topView.setText("You clicked on Image View") );
+        btn_img.setOnClickListener( vw -> topView.setText(R.string.image_clicked) );
     }
 }
