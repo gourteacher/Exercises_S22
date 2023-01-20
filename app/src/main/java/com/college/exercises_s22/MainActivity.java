@@ -31,19 +31,17 @@ public class MainActivity extends AppCompatActivity {
 
         Button myBtn = findViewById(R.id.btn);
         myBtn.setOnClickListener((vw) -> {
-            myText.setText("You clicked the button!");
+            myText.setText(R.string.button_clicked);
             myCb.setChecked(false);
-
-
             // Toast.makeText(MainActivity.this, " ",Toast.LENGTH_LONG).show();
-            Snackbar.make(myText, "hello snack", Snackbar.LENGTH_LONG).show();
+            Snackbar.make(myText, R.string.snackbar_message, Snackbar.LENGTH_LONG).show();
         });
-        ImageButton myImgBtn = findViewById(R.id.imgView);
 
-        myImgBtn.setOnClickListener((view) -> myEdit.setText("You clicked the image"));
+        ImageButton myImgBtn = findViewById(R.id.imgView);
+        myImgBtn.setOnClickListener((view) -> myEdit.setText(R.string.image_clicked));
 
         myCb.setOnCheckedChangeListener((btnView, onOrOff)-> {
-            myBtn.setText(onOrOff?"box is on" : "box is off");
+            myBtn.setText(onOrOff?R.string.box_on : R.string.box_off);
 
         });
     }
