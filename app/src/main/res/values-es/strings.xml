@@ -4,7 +4,7 @@
     <string name="hello_message">Hola!</string>
     <string name="button_text">soy un boton</string>
     <string name="enter_phone_number">El número de teléfono</string>
-    <string name="enter_text">Ingrese cualquier texto aqu </string>
+    <string name="enter_text">Ingrese cualquier texto aqui </string>
     <string name="image_clicked">Vista de Imagen marcada</string>
     <string name="edit_text_init">Editar texto tiene </string>
     <string name="java_msg"> Java pon esto aquí </string>
