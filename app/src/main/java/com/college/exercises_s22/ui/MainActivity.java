@@ -28,21 +28,9 @@ public class MainActivity extends AppCompatActivity {
         TextView result = findViewById(R.id.result);
         Button compute = findViewById(R.id.compute);
 
+        compute.setOnClickListener(v -> model.editString.postValue(editText.getText().toString()));
 
-        compute.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                model.editString.postValue(editText.getText().toString());
-
-            }
-        });
-
-        model.editString.observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(String s) {
-                result.setText(s);
-            }
-        });
+        model.editString.observe(this, s -> result.setText(s));
 
     }
 }
