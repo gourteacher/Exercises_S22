@@ -1,6 +1,7 @@
 package com.college.exercises_s22.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
@@ -26,13 +27,20 @@ public class MainActivity extends AppCompatActivity {
         EditText editText = findViewById(R.id.input);
         TextView result = findViewById(R.id.result);
         Button compute = findViewById(R.id.compute);
-        result.setText(model.editString );
+
 
         compute.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                model.editString = editText.getText().toString();
-                result.setText(model.editString );
+                model.editString.postValue(editText.getText().toString());
+
+            }
+        });
+
+        model.editString.observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                result.setText(s);
             }
         });
 
