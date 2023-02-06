@@ -9,9 +9,12 @@
     <TextView
         android:id="@+id/activitytwo"
         android:layout_width="347dp"
-        android:layout_height="54dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
         android:text="@string/activity_two"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/start_camera"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -19,7 +22,7 @@
     <Button
         android:id="@+id/start_camera"
         android:layout_width="312dp"
-        android:layout_height="54dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:text="@string/btn_start_camera"
         app:layout_constraintBottom_toTopOf="@+id/picture"
@@ -31,9 +34,8 @@
     <ImageView
         android:id="@+id/picture"
         android:layout_width="335dp"
-        android:layout_height="229dp"
+        android:layout_height="200dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
         android:background="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/intent_return_button"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +47,8 @@
     <Button
         android:id="@+id/intent_return_button"
         android:layout_width="294dp"
-        android:layout_height="65dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:text="@string/back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

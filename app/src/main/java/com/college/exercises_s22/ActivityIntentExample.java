@@ -58,6 +58,9 @@ public class ActivityIntentExample extends AppCompatActivity {
                 if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
                     if (i.resolveActivity(getPackageManager()) != null)
                         startActivity(i);
+                } else {
+                    Toast.makeText(getApplicationContext(), R.string.dial_error, Toast.LENGTH_LONG).show();
+
                 }
             }
         } );

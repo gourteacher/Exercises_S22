@@ -20,14 +20,7 @@ public class FirstActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState); //calls parent onCreate()
 
-        Log.i(TAG, "In onCreate, creating the objects");
         setContentView( R.layout.activity_first ); //loads XML on screen
-
-        SharedPreferences prefs = getSharedPreferences(PREFERENCES_FILE, Context.MODE_PRIVATE);
-        //Read preferences
-        String previous = prefs.getString("ReserveName", this.getResources().getString(R.string.default_value_str));
-        TextView edit = findViewById(R.id.reserved_name);
-        edit.setText(previous);
 
         Button btn = findViewById(R.id.start_button);
         btn.setOnClickListener(  (  click ) ->

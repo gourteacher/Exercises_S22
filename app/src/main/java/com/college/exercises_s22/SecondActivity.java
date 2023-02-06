@@ -23,51 +23,42 @@ import android.widget.ImageView;
 public class SecondActivity extends AppCompatActivity {
 
     public final static String TAG ="SecondActivity";
-
-    ImageView imgv;
-
-    ActivityResultLauncher<Intent> myPictureTakerLauncher = registerForActivityResult(
-            new ActivityResultContracts.StartActivityForResult()
-            ,new ActivityResultCallback<ActivityResult>() {
-                @Override
-                public void onActivityResult(ActivityResult result) {
-
-                    if (result.getResultCode() == Activity.RESULT_OK) {
-
-                        try {
-                            Intent data = result.getData();
-
-                            Bitmap imgbitmap = (Bitmap) data.getExtras().get("data");
-                            imgv.setImageBitmap(imgbitmap);
-                        }
-                        catch(Exception e){
-                            e.printStackTrace();
-                            Log.w(TAG, "Can't output PNG");
-                        }
-                    }
-                    else if(result.getResultCode() == Activity.RESULT_CANCELED)
-                        Log.i(TAG, "User refused to capture a picture.");
-                }
-            } );
+    private ImageView imgv;
+    private ActivityResultLauncher<Intent> myPictureTakerLauncher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
+        myPictureTakerLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult()
+                ,new ActivityResultCallback<ActivityResult>() {
+                    @Override
+                    public void onActivityResult(ActivityResult result) {
+                        if (result.getResultCode() == Activity.RESULT_OK) {
+                            try {
+                                Intent data = result.getData();
+                                Bundle b = data.getExtras();
+                                if (b != null) {
+                                    Bitmap imgbitmap = (Bitmap) b.get("data");
+                                    imgv.setImageBitmap(imgbitmap);
+                                }
+                            }
+                            catch(Exception e){
+                                e.printStackTrace();
+                                Log.w(TAG, "Can't output PNG");
+                            }
+                        }
+                        else if(result.getResultCode() == Activity.RESULT_CANCELED)
+                            Log.i(TAG, "User refused to capture a picture.");
+                    }
+                } );
+
         Intent fromPrevious = getIntent();
         String input = fromPrevious.getStringExtra("USERINPUT"); //if "USERINPUT" is not found, return null
         int month = fromPrevious.getIntExtra("MONTH", 0); //if "MONTH" is not found, return 0
         double other = fromPrevious.getDoubleExtra("OTHER INFO", 0.0);//if "OTHERINFO" is not found, return 0.0
-
-        //save data from first page:
-        SharedPreferences prefs = getSharedPreferences(FirstActivity.PREFERENCES_FILE, Context.MODE_PRIVATE);
-        SharedPreferences.Editor writer = prefs.edit();
-        writer.putString("USERINPUT", input);
-        writer.putInt("MONTH", month);
-        writer.putFloat("OTHER INFO", (float)other);
-
-        writer.apply(); //save to disk
 
         Button cam = findViewById( R.id.start_camera);
         cam.setOnClickListener(new View.OnClickListener() {

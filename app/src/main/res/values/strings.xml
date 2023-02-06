@@ -23,4 +23,5 @@
     <string name="btn_start_camera">Start Camera</string>
     <string name="activity_two">Activity Two</string>
     <string name="default_value_str">Default Value</string>
+    <string name="dial_error">Cannot use Dial on this device</string>
 </resources>

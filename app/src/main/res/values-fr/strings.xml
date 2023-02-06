@@ -22,4 +22,5 @@
     <string name="btn_start_camera">Lancer Caméra</string>
     <string name="activity_two">Activité Deux</string>
     <string name="default_value_str">Valeur par défaut</string>
+    <string name="dial_error">Impossible d\'utiliser l\'appli Téléphone</string>
 </resources>
