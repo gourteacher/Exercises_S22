@@ -21,14 +21,13 @@ public class FirstActivity extends AppCompatActivity {
 
     ArrayList<String> listItems = new ArrayList<>();
     ArrayAdapter<String> adapter;
-    private ListView myListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
 
-        myListView = findViewById(R.id.myListView);
+        ListView myListView = findViewById(R.id.myListView);
 
         adapter = new ArrayAdapter<>( this,
                 android.R.layout.simple_dropdown_item_1line,
