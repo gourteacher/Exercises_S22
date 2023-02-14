@@ -14,14 +14,11 @@ public class MainActivity extends AppCompatActivity {
 
     private static final float RATE_CAD_EURO = 0.85F;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
     }
-
 
     public void convertAmount(View v) {
 
@@ -38,9 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
             float amount_euro = amount_cad * RATE_CAD_EURO;
 
-            String result = "" + String.format("%.2f", amount_euro) +  " euros";
-
-            tv.setText(result);
+            String resultStr = new StringBuilder().append(amount_euro).append(" ").append("euros").toString();
+            tv.setText(resultStr);
 
         } else {
             tv.setTextColor(Color.RED);
