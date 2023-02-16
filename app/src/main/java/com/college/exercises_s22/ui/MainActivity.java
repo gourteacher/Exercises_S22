@@ -26,13 +26,13 @@ public class MainActivity extends AppCompatActivity {
         EditText editText = findViewById(R.id.input);
         TextView result = findViewById(R.id.result);
         Button compute = findViewById(R.id.compute);
-        result.setText(model.editString );
+        result.setText(model.getResultString() );
 
         compute.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                model.editString = editText.getText().toString();
-                result.setText(model.editString );
+                model.setResultString(editText.getText().toString());
+                result.setText(model.getResultString());
             }
         });
 

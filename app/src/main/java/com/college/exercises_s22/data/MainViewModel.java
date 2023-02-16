@@ -4,5 +4,13 @@ import androidx.lifecycle.ViewModel;
 
 public class MainViewModel extends ViewModel {
 
-    public String editString;
+    private String resultString;
+
+    public String getResultString() {
+        return resultString;
+    }
+
+    public void setResultString(String in) {
+        resultString = in;
+    }
 }
