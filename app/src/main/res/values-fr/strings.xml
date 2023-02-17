@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Week 4 - deux activities</string>
+    <string name="app_name">Exercices - ListView</string>
     <string name="add_button">Ajouter</string>
+    <string name="add_item">Article ajouté à la liste</string>
+    <string name="remove_item">Article effacée de la liste</string>
+    <string name="action">Action</string>
 </resources>

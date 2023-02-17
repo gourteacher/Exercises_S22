@@ -19,8 +19,9 @@ import java.util.Locale;
 
 public class FirstActivity extends AppCompatActivity {
 
-    ArrayList<String> listItems = new ArrayList<>();
-    ArrayAdapter<String> adapter;
+    private static final String DATE_FORMAT = "HH:mm:ss MM/dd/yyyy";
+    private ArrayList<String> listItems = new ArrayList<>();
+    private ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +29,7 @@ public class FirstActivity extends AppCompatActivity {
         setContentView(R.layout.activity_first);
 
         ListView myListView = findViewById(R.id.myListView);
-
+        
         adapter = new ArrayAdapter<>( this,
                 android.R.layout.simple_dropdown_item_1line,
                 listItems);
@@ -40,25 +41,24 @@ public class FirstActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 listItems.remove(listItems.size() -1);
                 adapter.notifyDataSetChanged();
-                Snackbar.make(view, "Item removed", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Snackbar.make(view, getString(R.string.add_item), Snackbar.LENGTH_LONG)
+                        .setAction(getString(R.string.action), null).show();
             }
         });
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(view -> {
             addListItem();
-            Snackbar.make(view, "Item added to list",
+            Snackbar.make(view, getString(R.string.remove_item),
                             Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
-            //.setAction("Undo", undo).show();
+                    .setAction(getString(R.string.action), null).show();
         });
 
     }
 
     private void addListItem() {
         SimpleDateFormat dateformat =
-                new SimpleDateFormat("HH:mm:ss MM/dd/yyyy",
+                new SimpleDateFormat(DATE_FORMAT,
                         Locale.US);
         listItems.add(dateformat.format(new Date()));
         adapter.notifyDataSetChanged();

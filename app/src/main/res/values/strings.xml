@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Exercises - ListView</string>
     <string name="add_button">Add</string>
-
+    <string name="add_item">Item added to list</string>
+    <string name="remove_item">Item removed from list</string>
+    <string name="action">Action</string>
 </resources>
