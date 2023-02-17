@@ -18,9 +18,7 @@ public class FirstActivity extends AppCompatActivity {
 
     private static final String TAG = "FirstActivity";
 
-    private ArrayList<String> elements = new ArrayList<>(  );
-    MyListAdapter myAdapter;
-
+    private ArrayList<String> elements = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //Your program starts here
@@ -31,10 +29,8 @@ public class FirstActivity extends AppCompatActivity {
         setContentView(R.layout.activity_first);
 
         ListView myList = findViewById(R.id.theListView);
-        //Line 37 is the same as lines 35 and 36:
-        //MyListAdapter myAdapter = new MyListAdapter();
-        //myList.setAdapter( myAdapter);
-        myList.setAdapter( myAdapter = new MyListAdapter());
+        MyListAdapter myAdapter = new MyListAdapter();
+        myList.setAdapter( myAdapter);
 
         Button addButton = findViewById(R.id.addButton);
         addButton.setOnClickListener( click -> {
@@ -55,18 +51,18 @@ public class FirstActivity extends AppCompatActivity {
             alertDialogBuilder.setTitle("Make a choice")
 
                     //What is the message:
-                    .setMessage("Do you want to add a row")
+                    .setMessage(R.string.ab_add_row)
 
                     //what the Yes button does:
-                    .setPositiveButton("Yes", (click, arg) -> {
+                    .setPositiveButton(R.string.ab_yes, (click, arg) -> {
                         elements.add("HELLO");
                         myAdapter.notifyDataSetChanged();
                     })
                     //What the No button does:
-                    .setNegativeButton("No", (click, arg) -> { })
+                    .setNegativeButton(R.string.ab_no, (click, arg) -> { })
 
                     //An optional third button:
-                    .setNeutralButton("Maybe", (click, arg) -> {  })
+                    .setNeutralButton(R.string.ab_maybe, (click, arg) -> {  })
 
                     //You can add extra layout elements:
                     .setView(getLayoutInflater().inflate(R.layout.row_layout, null) )

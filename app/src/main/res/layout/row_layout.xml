@@ -6,7 +6,10 @@
     <TextView
         android:id="@+id/textGoesHere"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:textAlignment="center"
+        android:textColor="@color/teal_700"
+        android:textSize="20sp" />
 
 
 </LinearLayout>
