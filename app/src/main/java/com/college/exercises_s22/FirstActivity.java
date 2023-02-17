@@ -19,7 +19,6 @@ public class FirstActivity extends AppCompatActivity {
     private static final String TAG = "FirstActivity";
 
     private ArrayList<String> elements = new ArrayList<>(  );
-    MyListAdapter myAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,14 +30,11 @@ public class FirstActivity extends AppCompatActivity {
         setContentView(R.layout.activity_first);
 
         ListView myList = findViewById(R.id.theListView);
-        //Line 37 is the same as lines 35 and 36:
-        //MyListAdapter myAdapter = new MyListAdapter();
-        //myList.setAdapter( myAdapter);
-        myList.setAdapter( myAdapter = new MyListAdapter());
+        MyListAdapter myAdapter = new MyListAdapter();
+        myList.setAdapter( myAdapter);
 
         Button addButton = findViewById(R.id.addButton);
         addButton.setOnClickListener( click -> {
-
             Log.i(TAG, "Adding a row");
             elements.add( "Another Row");
             myAdapter.notifyDataSetChanged();
