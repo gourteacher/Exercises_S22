@@ -5,4 +5,6 @@
     <string name="msg_time">Temps ici</string>
     <string name="btn_submit">Envoyer</string>
     <string name="hint_message">Entrer votre message</string>
+    <string name="sb_item_click">"Vous avez cliqué sur l\'élément "</string>
+    <string name="sb_action">Effacer</string>
 </resources>
