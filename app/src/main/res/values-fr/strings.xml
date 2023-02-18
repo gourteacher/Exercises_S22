@@ -2,6 +2,7 @@
 <resources>
     <string name="app_name">Exercises - ListView</string>
     <string name="add_button">Ajouter</string>
+    <string name="ab_choice">Faire un choix</string>
     <string name="ab_add_row">Voulez-vous ajouter une rangée</string>
     <string name="ab_yes">Oui</string>
     <string name="ab_no">Non</string>

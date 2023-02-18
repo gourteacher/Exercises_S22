@@ -1,5 +1,7 @@
 package com.college.exercises_s22;
 
+import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,7 +50,7 @@ public class FirstActivity extends AppCompatActivity {
 
         myList.setOnItemLongClickListener( (p, b, pos, id) -> {
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-            alertDialogBuilder.setTitle("Make a choice")
+            alertDialogBuilder.setTitle(R.string.ab_choice)
 
                     //What is the message:
                     .setMessage(R.string.ab_add_row)
@@ -69,11 +71,25 @@ public class FirstActivity extends AppCompatActivity {
 
                     //Show the dialog
                     .create().show();
+
+            /*
+            alertDialogBuilder.setTitle(R.string.ab_choice)
+                    .setItems(R.array.array_color, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            // The 'which' argument contains the index position
+                            // of the selected item
+                            if (which==0) {
+                                b.setBackgroundColor(Color.RED);
+                            } else if (which== 1) {
+                                b.setBackgroundColor(Color.BLUE);
+                            } else {
+                                b.setBackgroundColor(Color.GREEN);
+                            }
+                        }
+                    }).show();
+                */
             return true;
         });
-
-
-
     }
 
     private class MyListAdapter extends BaseAdapter {

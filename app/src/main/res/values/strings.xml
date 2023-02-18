@@ -1,8 +1,14 @@
 <resources>
     <string name="app_name">Exercises - ListView</string>
     <string name="add_button">Add</string>
+    <string name="ab_choice">Make a choice</string>
     <string name="ab_add_row">Do you want to add a row</string>
     <string name="ab_yes">Yes</string>
     <string name="ab_no">No</string>
     <string name="ab_maybe">Maybe</string>
+    <array name="array_color">
+        <item>RED</item>
+        <item>BLUE</item>
+        <item>GREEN</item>
+    </array>
 </resources>
