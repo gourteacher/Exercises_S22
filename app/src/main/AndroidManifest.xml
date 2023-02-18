@@ -10,14 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Exercises_S22">
         <activity
-            android:name=".FirstActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
