@@ -84,7 +84,8 @@ public class MessageRecyclerViewAdapter extends RecyclerView.Adapter< MessageRec
 
             itemView.setOnClickListener( v -> {
 
-                int position = getBindingAdapterPosition();//which row was clicked.
+                //which row was clicked
+                int position = getAdapterPosition() ;
 
                 View.OnClickListener listener = v1 -> {
                     mMessageList.remove(position);
