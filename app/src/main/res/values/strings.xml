@@ -1,4 +1,9 @@
 <resources>
-    <string name="app_name">Exercises_S22</string>
-    <string name="hello_world">Hello World!</string>
+    <string name="app_name">Exercises_S22 - Room</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="add_btn">Add</string>
+    <string name="delete_btn">Delete</string>
+    <string name="load_btn">Load</string>
+    <string name="error_string_empty">"Cannot add empty strings"</string>
 </resources>
