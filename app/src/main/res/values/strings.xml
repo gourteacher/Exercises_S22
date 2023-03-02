@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">Exercises_S22</string>
-    <string name="hello_world">Hello World!</string>
+    <string name="app_name">Exercises_S22 - Fragments</string>
+    <string name="toast_msg">Called by fragment:%1$s position:%2$d</string>
 </resources>
