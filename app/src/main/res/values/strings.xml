@@ -1,4 +1,8 @@
 <resources>
-    <string name="app_name">Exercises_S22</string>
-    <string name="hello_world">Hello World!</string>
+    <string name="app_name">Exercises_S22 - Room</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="save_btn">Save</string>
+    <string name="clear_btn">Clear</string>
+    <string name="list_btn">List</string>
 </resources>
