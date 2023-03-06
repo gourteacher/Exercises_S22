@@ -1,70 +1,101 @@
 package com.college.exercises_s22;
 
-import android.os.Bundle;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 
+import android.graphics.Bitmap;
+
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.ImageRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.college.exercises_s22.databinding.ActivityMainBinding;
+import com.google.android.material.snackbar.Snackbar;
 
-import java.util.List;
+import org.json.JSONArray;
+import org.json.JSONObject;import java.net.URLEncoder;
+import java.util.Locale;
+
 
 public class MainActivity extends AppCompatActivity {
 
-    private ActivityMainBinding binding;
-    private AppDatabase db;
+    private final String TAG = getClass().getSimpleName();
+
+    private final String MY_KEY = "YOUR_KEY_HERE"; //Replace it with your own key
+    private final String URL_REQUEST_IMG = "https://openweathermap.org/img/w/";
+    private final String URL_REQUEST_DATA = "https://api.openweathermap.org/data/2.5/weather?q=";
+    private final String URL_API_PARAM = "&appid=" + MY_KEY +  "&units=metric";
+
+    protected String cityName;
+    protected RequestQueue queue = null;
+    private  String iconName = null;
+    private  ImageRequest imgReq;
+    private  Bitmap image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+
+        queue = Volley.newRequestQueue(this);
+        ActivityMainBinding binding = ActivityMainBinding.inflate( getLayoutInflater() );
         setContentView(binding.getRoot());
 
-        db = AppDatabase.getInstance(this);
+        binding.forecastButton.setOnClickListener(click -> {
+            cityName = binding.editText.getText().toString();
 
-        binding.btnSave.setOnClickListener(v -> {
-            saveData();
-        });
+            try {
+                if (!cityName.isEmpty()) {
 
-        binding.btnClear.setOnClickListener( v -> {
-            clearData();
-        });
+                    String url = URL_REQUEST_DATA + URLEncoder.encode(cityName, "UTF-8") + URL_API_PARAM;
 
-        binding.btnList.setOnClickListener( v -> {
-            listData();
-        });
-    }
+                    //this goes in the button click handler:
+                    JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+                            (response) -> {
+                                try {
+                                    JSONObject coord = response.getJSONObject("coord");
+                                    JSONArray weatherArray = response.getJSONArray("weather");
+                                    JSONObject position0 = weatherArray.getJSONObject(0);
+                                    iconName = weatherArray.getJSONObject(0).getString("icon");
+                                    String description = position0.getString("description");
 
+                                    JSONObject mainObject = response.getJSONObject("main");
+                                    double current = mainObject.getDouble("temp");
+                                    double min = mainObject.getDouble("temp_min");
+                                    double max = mainObject.getDouble("temp_max");
+                                    int humidity = mainObject.getInt("humidity");
 
-    private void saveData() {
-        String lastname = binding.lnameEdit.getText().toString();
-        String firstname = binding.fnameEdit.getText().toString();
-        new Thread(() -> {
-            Person person = new Person(lastname, firstname);
-            PersonDAO dao = db.getPersonDAO();
-            dao.insertPerson(person);
-            List<Person> people = dao.listPeople();
-            for(Person p:people) {
-                System.out.printf("%s, %s\n", p.last_name, p.first_name );
+                                    imgReq = new ImageRequest(URL_REQUEST_IMG + iconName + ".png", bitmap -> {
+                                        image = bitmap;
+                                        binding.imageView.setImageBitmap(image);
+                                    }, 1024, 1024, ImageView.ScaleType.CENTER, null, (error) -> {
+                                    });
+                                    queue.add(imgReq);
+
+                                    binding.tvDescription.setText(description);
+                                    binding.tvCurrentVal.setText(String.format(Locale.CANADA, "%.1f°", current));
+                                    binding.tvMinVal.setText(String.format(Locale.CANADA, "%.1f°", min));
+                                    binding.tvMaxVal.setText(String.format(Locale.CANADA, "%.1f°", max));
+
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                            },
+                            (error) -> {
+                                Log.e(TAG, "error");
+                            });
+                    queue.add(request);
+                } else {
+                    Snackbar.make(click, R.string.error_msg, Snackbar.LENGTH_SHORT).show();
+                }
             }
-        }).start();
-    }
-
-    private void  clearData() {
-        binding.lnameEdit.setText("");
-        binding.fnameEdit.setText("");
-    }
-
-    private void listData() {
-        new Thread(() -> {
-            PersonDAO dao = db.getPersonDAO();
-            List<Person> people = dao.listPeople();
-            for(Person p:people) {
-                System.out.printf("%s, %s\n", p.last_name, p.first_name );
+            catch (Exception e) {
+                Log.e(TAG, "error encoding city name");
             }
-        }).start();
+        });
     }
 }
-

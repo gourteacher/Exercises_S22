@@ -1,8 +1,11 @@
 <resources>
-    <string name="app_name">Exercises_S22 - Room</string>
-    <string name="first_name">First Name</string>
-    <string name="last_name">Last Name</string>
-    <string name="save_btn">Save</string>
-    <string name="clear_btn">Clear</string>
-    <string name="list_btn">List</string>
+    <string name="app_name">Exercises_S22 - Networking</string>
+    <string name="name_city">Enter name of a city</string>
+    <string name="city_name">City Name</string>
+    <string name="button_forecast">Get Forecast</string>
+    <string name="current_temperature">Current Temperature</string>
+    <string name="min_temperature">Min Temperature</string>
+    <string name="max_temperature">Max Temperature</string>
+    <string name="weather_icon">Weather Icon</string>
+    <string name="error_msg">Please enter the name of a valid city</string>
 </resources>
