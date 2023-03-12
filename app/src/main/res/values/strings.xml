@@ -1,4 +1,7 @@
 <resources>
-    <string name="app_name">Exercises_S22</string>
-    <string name="hello_world">Hello World!</string>
+    <string name="app_name">Exercises_S22 - JSON</string>
+    <string name="json_reading_a_file">JSON - Reading a File</string>
+    <string name="number_of_entries">Number of entries</string>
+    <string name="btn_clear">Clear Results</string>
+
 </resources>

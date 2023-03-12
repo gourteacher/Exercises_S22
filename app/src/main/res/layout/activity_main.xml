@@ -6,13 +6,54 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/btnReadJsonFile"
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:text="@string/json_reading_a_file"
+        app:layout_constraintBottom_toTopOf="@+id/button_clear"
+        app:layout_constraintTop_toBottomOf="@+id/textViewJsonRead"
+        app:layout_constraintVertical_bias="0.5"
+        tools:layout_editor_absoluteX="0dp" />
+
     <TextView
+        android:id="@+id/textViewJsonRead"
+        android:layout_width="194dp"
+        android:layout_height="wrap_content"
+        android:text="@string/number_of_entries"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnReadJsonFile"
+        app:layout_constraintEnd_toStartOf="@+id/textViewEntries"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/textViewEntries"
+        android:layout_width="194dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/design_default_color_error"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnReadJsonFile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textViewJsonRead"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <Button
+        android:id="@+id/button_clear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="clear"
+        android:text="@string/btn_clear"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnReadJsonFile"
+        app:layout_constraintVertical_bias="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
