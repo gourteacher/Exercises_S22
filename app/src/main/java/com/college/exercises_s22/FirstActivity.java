@@ -9,26 +9,13 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 public class FirstActivity extends AppCompatActivity {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle(R.string.toolbar_title); // set the Name
-        setSupportActionBar(toolbar);
-
-        toolbar.setSubtitle(R.string.toolbar_subtitle); // the second line
-
-        toolbar.setLogo(R.drawable.mini_opera_icon);
-
-
     }
 
     @Override
@@ -43,7 +30,7 @@ public class FirstActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
-        View v = findViewById(R.id.mylayout);
+        View v = findViewById(R.id.my_rectangle);
 
         switch(id) {
             case R.id.red_id:
