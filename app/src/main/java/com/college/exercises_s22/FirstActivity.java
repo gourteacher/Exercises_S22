@@ -19,16 +19,12 @@ public class FirstActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.toolbar_title); // set the Name
         setSupportActionBar(toolbar);
 
         toolbar.setSubtitle(R.string.toolbar_subtitle); // the second line
-
         toolbar.setLogo(R.drawable.mini_opera_icon);
-
-
     }
 
     @Override
