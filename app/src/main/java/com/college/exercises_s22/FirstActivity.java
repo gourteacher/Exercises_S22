@@ -18,7 +18,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class FirstActivity extends AppCompatActivity  {
+public class FirstActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,39 +37,40 @@ public class FirstActivity extends AppCompatActivity  {
 
         NavigationView navigationView = findViewById(R.id.nav_view);
 
-        navigationView.setNavigationItemSelectedListener(item ->
-            {
-                String message = null;
+        navigationView.setNavigationItemSelectedListener(this);
 
-                switch(item.getItemId())
-                {
-                    case R.id.share_item:
-                        message = getString(R.string.share_clicked);
-                        break;
-                    case R.id.app_bar_search:
-                        message = getString(R.string.search_clicked);
-                        break;
-                    case R.id.video_item:
-                        message = getString(R.string.video_clicked);
-                        break;
-                    case R.id.mail_item:
-                        message = getString(R.string.mail_clicked);
-                        break;
-                    case R.id.call_item:
-                        message = getString(R.string.call_clicked);
-                        break;
-                }
-
-                drawerLayout.closeDrawer(GravityCompat.START);
-
-                if ( message != null ) {
-                    String strToShow = getString(R.string.nav_drawer_msg, message);
-                    Toast.makeText(this, strToShow, Toast.LENGTH_LONG).show();
-                }
-                return false ;
-            }
-        );
     }
+
+    public boolean onNavigationItemSelected(MenuItem item)
+    {
+        String message = null;
+        switch (item.getItemId()) {
+            case R.id.share_item:
+                message = getString(R.string.share_clicked);
+                break;
+            case R.id.app_bar_search:
+                message = getString(R.string.search_clicked);
+                break;
+            case R.id.video_item:
+                message = getString(R.string.video_clicked);
+                break;
+            case R.id.mail_item:
+                message = getString(R.string.mail_clicked);
+                break;
+            case R.id.call_item:
+                message = getString(R.string.call_clicked);
+                break;
+        }
+        DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
+        drawerLayout.closeDrawer(GravityCompat.START);
+
+        if (message != null) {
+            String strToShow = getString(R.string.nav_drawer_msg, message);
+            Toast.makeText(this, strToShow, Toast.LENGTH_LONG).show();
+        }
+        return false;
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
