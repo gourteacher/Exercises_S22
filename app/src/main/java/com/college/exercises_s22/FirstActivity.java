@@ -7,18 +7,12 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.google.android.material.navigation.NavigationView;
-
-public class FirstActivity extends AppCompatActivity  {
+public class FirstActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,49 +20,12 @@ public class FirstActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle(R.string.toolbar_title); // set the Name
         setSupportActionBar(toolbar);
 
-        //For NavigationDrawer:
-        DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,
-                drawerLayout, toolbar, R.string.open, R.string.close);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
+        toolbar.setSubtitle(R.string.toolbar_subtitle); // the second line
 
-        NavigationView navigationView = findViewById(R.id.nav_view);
-
-        navigationView.setNavigationItemSelectedListener(item ->
-            {
-                String message = null;
-
-                switch(item.getItemId())
-                {
-                    case R.id.share_item:
-                        message = getString(R.string.share_clicked);
-                        break;
-                    case R.id.app_bar_search:
-                        message = getString(R.string.search_clicked);
-                        break;
-                    case R.id.video_item:
-                        message = getString(R.string.video_clicked);
-                        break;
-                    case R.id.mail_item:
-                        message = getString(R.string.mail_clicked);
-                        break;
-                    case R.id.call_item:
-                        message = getString(R.string.call_clicked);
-                        break;
-                }
-
-                drawerLayout.closeDrawer(GravityCompat.START);
-
-                if ( message != null ) {
-                    String strToShow = getString(R.string.nav_drawer_msg, message);
-                    Toast.makeText(this, strToShow, Toast.LENGTH_LONG).show();
-                }
-                return false ;
-            }
-        );
+        toolbar.setLogo(R.drawable.mini_opera_icon);
     }
 
     @Override
@@ -83,21 +40,25 @@ public class FirstActivity extends AppCompatActivity  {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
-        View bg = findViewById(R.id.mainLayout);
+        View v = findViewById(R.id.my_rectangle);
 
         switch(id) {
             case R.id.red_id:
-                bg.setBackgroundColor(Color.RED);
+                v.setBackgroundColor(Color.RED);
                 break;
+
             case R.id.blue_id:
-                bg.setBackgroundColor(Color.BLUE);
+                v.setBackgroundColor(Color.BLUE);
                 break;
+
             case R.id.green_id:
-                bg.setBackgroundColor(Color.GREEN);
+                v.setBackgroundColor(Color.GREEN);
                 break;
+
             case R.id.yellow_id:
-                bg.setBackgroundColor(Color.YELLOW);
+                v.setBackgroundColor(Color.YELLOW);
                 break;
+
             case R.id.move_to_next:
                 Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
                 startActivity(intent);
@@ -105,10 +66,6 @@ public class FirstActivity extends AppCompatActivity  {
             default:
                 break;
         }
-
-        DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
-        drawerLayout.closeDrawer(GravityCompat.START);
-
         return super.onOptionsItemSelected(item);
     }
 

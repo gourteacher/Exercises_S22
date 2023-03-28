@@ -19,8 +19,11 @@ public class SecondActivity extends AppCompatActivity {
 
         toolbar.setTitle(R.string.second_activity);
 
+
         // Here we need the Action Bar
         ActionBar myBar = getSupportActionBar();
         myBar.setDisplayHomeAsUpEnabled(true);
+
+
     }
 }
