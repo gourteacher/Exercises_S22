@@ -1,56 +1,46 @@
 package com.college.exercises_s22;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.util.Log;
+import android.widget.TextView;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    static public final String TAG = "MainActivity";
+    private final ArrayList<String> userList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Initialize a pool of threads
-        ExecutorService executorService = Executors.newFixedThreadPool(5);
 
-        //Create all these threads
-        for (int i=0; i < 15; i++ ) {
-            final int threadNum = i;
-            executorService.submit(new Thread(() -> {
-                doSomething(threadNum);
-            }));
-        }
+        initData();
 
-        //Shutdown the Executor Service
-        executorService.shutdown();
-        try {
-            if (!executorService.awaitTermination(500, TimeUnit.MILLISECONDS)) {
-                executorService.shutdownNow();
-            }
-        } catch (InterruptedException e) {
-            executorService.shutdownNow();
+        TextView tvInfo = findViewById(R.id.textview);
+
+        //Method #1
+        //tvInfo.setText("There are " + userList.size()  + " in file " + fileName);
+/*
+        //Method #2
+        String numUsers = getResources().getString(R.string.numUsers);
+        String getNumUsers = String.format(numUsers, userList.size(), fileName);
+        tvInfo.setText(getNumUsers);
+ */
+
+        //Method #3
+        String itemName = "user_data";
+        tvInfo.setText(getString(R.string.numUsers, userList.size(), itemName));
+
+    }
+
+    private void initData() {
+        for (int i=0; i < 5; i++) {
+            userList.add("Item #" + i);
         }
     }
 
-    // Threads will all execute this
-    private void doSomething(int num) {
-        int j=0;
-        while (j++ < 5) {
-            Log.i(TAG, "Thread #" + num + "; Loop: " + j);
-            try {
-                TimeUnit.MILLISECONDS.sleep(1000);
-            }
-            catch (Exception ex) {
-                Log.w(TAG, "Exception in Thread #" + num);
-            }
-        }
-    }
 }

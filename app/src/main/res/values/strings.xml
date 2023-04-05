@@ -1,4 +1,16 @@
 <resources>
-    <string name="app_name">Exercises_S22 - Threads</string>
-    <string name="hello_world">Hello World!</string>
-</resources>
+    <string name="app_name">Exercises_S2 - TestStrings</string>
+
+    <string name="items_left_1">You now have </string>
+    <string name="items_left_2"> items</string>
+    <string name="items_left">You now have %1$d items</string>
+
+    <string name="your_total"> Your total is $%1$f </string>
+    <string name="your_position"> You are number %1$d out of %2$d in the waiting list</string>
+
+
+    <string name="welcome_user"> Hello, %1$s! You have a new message.</string>
+
+    <string name="numUsers">There are %d users in file %s</string>
+
+    </resources>
