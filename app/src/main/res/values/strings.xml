@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">Exercises_S22 - Threads</string>
+    <string name="app_name">Exercises - Kotlin Example</string>
+    <string name="send">Send</string>
 
 </resources>
