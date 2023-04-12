@@ -12,7 +12,6 @@ import java.util.*
 
 class MainActivity : AppCompatActivity(){
 
-    val TAG="MainActivity"
     lateinit var listItems:ArrayList<Message>
     lateinit var adapter:MyListAdapter
 
@@ -22,27 +21,27 @@ class MainActivity : AppCompatActivity(){
 
         listItems=ArrayList<Message>()
 
-        var btn=findViewById<Button>(R.id.load)
+        val btn=findViewById<Button>(R.id.load)
         btn?.setOnClickListener{btn->updateEntry()}
 
         //Examples of nullable vars
         //tv should be null here as we are trying to access an invalid view
         //textViewId2 exists in other_layout not in activity_main
-        var tv=findViewById<TextView>(R.id.textViewId2)
+        val tv=findViewById<TextView>(R.id.textViewId)
         //here, if tv is null, setText() is not executed
-        tv?.setText("This a textview")     //Nothing happens
+        tv?.setText("This is a textview")     //Nothing happens
         //Here, if tv is null, it will throw an exception
         //tv!!.setText("This a textview")    //An Exception should occur
 
         adapter=MyListAdapter(this,listItems)
-        val lv=findViewById<ListView>(R.id.list)
+        val lv=findViewById<ListView>(R.id.listView)
         lv?.adapter=adapter
     }
 
-    fun updateEntry():Unit{
+    fun updateEntry() {
         val tedit=findViewById<EditText>(R.id.enterTextId)
         if(tedit.text.length!=0){
-            var m=Message(tedit.text.toString(),Date())
+            val m=Message(tedit.text.toString(),Date())
             listItems.add(m)
             adapter.notifyDataSetChanged()
         }
@@ -72,7 +71,7 @@ class MainActivity : AppCompatActivity(){
         override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
             val rowView = inflater.inflate(R.layout.row_layout, p2, false)
 
-            var msg = dataSource.get(p0) as Message
+            val msg = dataSource.get(p0)
             // Get title element
             val titleTextView = rowView.findViewById(R.id.msgTextViewId) as TextView
             titleTextView.text = msg.info
@@ -84,9 +83,8 @@ class MainActivity : AppCompatActivity(){
     }
 
 
-
     class Message(val info:String, d:Date) {
-        lateinit var date_str :String
+        var date_str :String
 
         init {
             //convert date to String
