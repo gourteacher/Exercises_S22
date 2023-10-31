@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        setContentView(binding.getRoot());
+
 
         binding.computeButton.setOnClickListener(c -> {
             String userInput = binding.userInputId.getText().toString();
